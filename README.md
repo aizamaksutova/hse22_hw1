@@ -25,3 +25,5 @@ $ mkdir quality_resulrs
 $ fastqc sub1.fastq sub2.fastq subMP1.fastq subMP2.fastq -o quality_resulrs
 $ multiqc quality_resulrs -o multiqc_res
 ```
+результат можно получить вот в этом файле https://github.com/aizamaksutova/hse22_hw1/blob/main/multiqc_report.html
+либо ниже приведу картинки;)
