@@ -93,8 +93,10 @@ $ rm subMP1.fastq subMP2.fastq
 С помощью программы fastQC и multiQC оценим качество подрезанных чтений и получим по ним общую статистику
 ```
 $ mkdir fastqc_trimmed_result                        
-$ fastqc sub1.fastq.trimmed sub2.fastq.trimmed subMP1.fastq.int_trimmed subMP2.fastq.int_trimmed -o fastqc_trimmed_result
-$ multiqc quality_resulrs -o multiqc_trimmed_result
+$ fastqc -o fastqc_trimmed_result sub1.fastq.trimmed sub2.fastq.trimmed subMP1.fastq.int_trimmed subMP2.fastq.int_trimmed
+$ mkdir multiqc_trimmed
+$ multiqc -o multiqc_trimmed fastqc_trimmed_result
+
 ```
 Результаты можно получить по ссылке https://github.com/aizamaksutova/hse22_hw1/blob/main/multiqc_report.html
 Но приведу картинки здесь
