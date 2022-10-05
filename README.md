@@ -100,6 +100,6 @@ $ multiqc -o multiqc_trimmed fastqc_trimmed_result
 ```
 Результаты можно получить по ссылке https://github.com/aizamaksutova/hse22_hw1/blob/main/multiqc_report_trimmed.html
 Но приведу картинки здесь
-![](/images/Снимок экрана 2022-10-05 в 20.56.21.png)
-![](/images/Снимок экрана 2022-10-05 в 20.56.36.png)
-![](/images/Снимок экрана 2022-10-05 в 20.57.12.png)
+![m1](/images/Снимок экрана 2022-10-05 в 20.56.21.png)
+![m2](/images/Снимок экрана 2022-10-05 в 20.56.36.png)
+![m3](/images/Снимок экрана 2022-10-05 в 20.57.12.png)
