@@ -33,7 +33,7 @@ $ multiqc quality_resulrs -o multiqc_res
 
 4. Подрезаем чтения по качеству и удаляем адаптеры
 ```
-platanus_trim sub1.fastq sub2.fastq
+$ platanus_trim sub1.fastq sub2.fastq
 ```
 ```
 Number of trimmed read with adapter: 
@@ -54,7 +54,7 @@ NUM_OF_TRIMMED_PAIR(OR) = 1631261
 NUM_OF_TRIMMED_PAIR(AND) = 457078
 ```
 ```
-platanus_internal_trim subMP1.fastq subMP2.fastq
+$ platanus_internal_trim subMP1.fastq subMP2.fastq
 ```
 ```
 Number of trimmed read with internal adapter: 
@@ -83,4 +83,15 @@ NUM_OF_TRIMMED_BASE(REVERSE) = 23919065
 NUM_OF_TRIMMED_PAIR(OR) = 724563
 NUM_OF_TRIMMED_PAIR(AND) = 104618
 
+```
+после подрезания чтений удаляем исходные .fastq файлы, полученные с помощью программы seqtk
+```
+$ rm sub1.fastq sub2.fastq
+$ rm subMP1.fastq subMP2.fastq
+```
+С помощью программы fastQC и multiQC оценим качество подрезанных чтений и получим по ним общую статистику
+```
+$ mkdir fastqc_trimmed_result                        
+$ fastqc sub1.fastq.trimmed sub2.fastq.trimmed subMP1.fastq.int_trimmed subMP2.fastq.int_trimmed -o fastqc_trimmed_result
+$ multiqc quality_resulrs -o multiqc_trimmed_result
 ```
