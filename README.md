@@ -26,7 +26,7 @@ $ fastqc sub1.fastq sub2.fastq subMP1.fastq subMP2.fastq -o quality_resulrs
 $ multiqc quality_resulrs -o multiqc_res
 ```
 
-результат можно получить вот в этом файле https://github.com/aizamaksutova/hse22_hw1/blob/main/multiqc_report.html
+результат можно получить вот в этом файле https://github.com/aizamaksutova/hse22_hw1/blob/main/multiqc1_report.html
 либо ниже приведу картинки;)
 ![multiqc_report](/images/stats.png)
 ![multiqc_report1](/images/stats1.png)
@@ -95,3 +95,5 @@ $ mkdir fastqc_trimmed_result
 $ fastqc sub1.fastq.trimmed sub2.fastq.trimmed subMP1.fastq.int_trimmed subMP2.fastq.int_trimmed -o fastqc_trimmed_result
 $ multiqc quality_resulrs -o multiqc_trimmed_result
 ```
+Результаты можно получить по ссылке https://github.com/aizamaksutova/hse22_hw1/blob/main/multiqc_report.html
+Но приведу картинки здесь
