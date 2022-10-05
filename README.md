@@ -103,3 +103,15 @@ $ multiqc -o multiqc_trimmed fastqc_trimmed_result
 ![m1](/images/stat1.png)
 ![m2](/images/stat2.png)
 ![m3](/images/stat3.png)
+
+С помощью программы “platanus assemble” собираем контиги из подрезанных чтений(platanus assemble), потом собираем контиги из контигов и подрезанных чтений(platanus scaffold), а также в конце уменьшаем кол-во гэпов с помощью подрезанных чтений(platanus gap_close)
+```
+$ platanus assemble –o Oil –f sub1.fastq.trimmed sub2.fastq.trimmed 2> assemble.log
+$ platanus scaffold –o Oil –c Oil_contig.fa -IP1 sub1.fastq.trimmed sub2.fastq.trimmed -OP2 subMP1.fastq.int_trimmed subMP2.fastq.int_trimmed 2> scaffold.log
+$ platanus gap_close –o Oil –c Oil_scaffold.fa -IP1 sub1.fastq.trimmed sub2.fastq.trimmed -OP2 subMP1.fastq.int_trimmed subMP2.fastq.int_trimmed 2> gapclose.log
+
+```
+Удалим все ненужные fastq файлы
+```
+$ rm -rf sub1.fastq.trimmed sub2.fastq.trimmed subMP1.fastq.int_trimmed subMP2.fastq.int_trimmed
+```
