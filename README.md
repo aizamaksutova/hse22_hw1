@@ -30,3 +30,57 @@ $ multiqc quality_resulrs -o multiqc_res
 либо ниже приведу картинки;)
 ![multiqc_report](/images/stats.png)
 ![multiqc_report1](/images/stats1.png)
+
+4. Подрезаем чтения по качеству и удаляем адаптеры
+```
+platanus_trim sub1.fastq sub2.fastq
+```
+```
+Number of trimmed read with adapter: 
+NUM_OF_TRIMMED_READ(FORWARD) = 209273
+NUM_OF_TRIMMED_BASE(FORWARD) = 209689
+NUM_OF_TRIMMED_READ(REVERSE) = 209325
+NUM_OF_TRIMMED_BASE(REVERSE) = 357828
+NUM_OF_TRIMMED_PAIR(OR) = 209344
+NUM_OF_TRIMMED_PAIR(AND) = 209254
+
+
+Number of trimmed read because of low quality or too short (< 11bp): 
+NUM_OF_TRIMMED_READ(FORWARD) = 908801
+NUM_OF_TRIMMED_BASE(FORWARD) = 18125777
+NUM_OF_TRIMMED_READ(REVERSE) = 1179538
+NUM_OF_TRIMMED_BASE(REVERSE) = 35920617
+NUM_OF_TRIMMED_PAIR(OR) = 1631261
+NUM_OF_TRIMMED_PAIR(AND) = 457078
+```
+```
+platanus_internal_trim subMP1.fastq subMP2.fastq
+```
+```
+Number of trimmed read with internal adapter: 
+NUM_OF_TRIMMED_READ(FORWARD) = 971862
+NUM_OF_TRIMMED_BASE(FORWARD) = 169612617
+NUM_OF_TRIMMED_READ(REVERSE) = 956043
+NUM_OF_TRIMMED_BASE(REVERSE) = 171384290
+NUM_OF_TRIMMED_PAIR(OR) = 1187937
+NUM_OF_TRIMMED_PAIR(AND) = 739968
+
+
+Number of trimmed read with adapter: 
+NUM_OF_TRIMMED_READ(FORWARD) = 11098
+NUM_OF_TRIMMED_BASE(FORWARD) = 367383
+NUM_OF_TRIMMED_READ(REVERSE) = 11123
+NUM_OF_TRIMMED_BASE(REVERSE) = 389054
+NUM_OF_TRIMMED_PAIR(OR) = 11129
+NUM_OF_TRIMMED_PAIR(AND) = 11092
+
+
+Number of trimmed read because of low quality or too short (< 11bp): 
+NUM_OF_TRIMMED_READ(FORWARD) = 360733
+NUM_OF_TRIMMED_BASE(FORWARD) = 11656748
+NUM_OF_TRIMMED_READ(REVERSE) = 468448
+NUM_OF_TRIMMED_BASE(REVERSE) = 23919065
+NUM_OF_TRIMMED_PAIR(OR) = 724563
+NUM_OF_TRIMMED_PAIR(AND) = 104618
+
+```
