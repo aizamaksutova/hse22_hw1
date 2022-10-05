@@ -23,6 +23,7 @@ $ seqtk sample -s0226 oilMP_S4_L001_R2_001.fastq 1500000 > subMP2.fastq
 ```
 $ mkdir quality_resulrs
 $ fastqc sub1.fastq sub2.fastq subMP1.fastq subMP2.fastq -o quality_resulrs
+$ mkdir multiqc
 $ multiqc quality_resulrs -o multiqc_res
 ```
 
