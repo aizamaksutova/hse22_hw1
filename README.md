@@ -115,3 +115,23 @@ $ platanus gap_close –o Oil –c Oil_scaffold.fa -IP1 sub1.fastq.trimmed sub2.
 ```
 $ rm -rf sub1.fastq.trimmed sub2.fastq.trimmed subMP1.fastq.int_trimmed subMP2.fastq.int_trimmed
 ```
+
+
+Бонусное задание
+```
+seqtk sample -s226 oil_R1.fastq 500000 > bonus_sub_oilR1.fastq
+seqtk sample -s226 oil_R2.fastq 500000 > bonus_sub_oilR2.fastq
+seqtk sample -s226 oilMP_S4_L001_R1_001.fastq 150000 > bonus_sub_oilMP_R1.fastq
+seqtk sample -s226 oilMP_S4_L001_R2_001.fastq 150000 > bonus_sub_oilMP_R2.fastq
+
+platanus_trim bonus_sub_oilR*
+platanus_internal_trim bonus_sub_oilMP*
+
+platanus assemble -o Poil -f bonus_sub_oilR1.fastq.trimmed bonus_sub_oilR2.fastq.trimmed 2> bonus_assemble.log
+
+platanus scaffold -o Poil -c Poil_contig.fa -IP1 bonus_sub_oilR1.fastq.trimmed bonus_sub_oilR2.fastq.trimmed -OP2 bonus_sub_oilMP_R1.fastq.int_trimmed bonus_sub_oilMP_R2.fastq.int_trimmed 2> bonus_scaffold.log
+
+platanus gap_close -o Poil -c Poil_scaffold.fa -IP1 bonus_sub_oilR1.fastq.trimmed bonus_sub_oilR2.fastq.trimmed -OP2 bonus_sub_oilMP_R1.fastq.int_trimmed bonus_sub_oilMP_R2.fastq.int_trimmed 2> bonus_gapclose.log
+
+rm bonus
+```
