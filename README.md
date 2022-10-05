@@ -28,6 +28,5 @@ $ multiqc quality_resulrs -o multiqc_res
 
 результат можно получить вот в этом файле https://github.com/aizamaksutova/hse22_hw1/blob/main/multiqc_report.html
 либо ниже приведу картинки;)
-```
 ![multiqc_report](/images/stats.png)
-```
+![multiqc_report1](/images/stats1.png)
